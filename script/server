@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+[ -z "${DEBUG}" ] || set -x
+
+cd "$(dirname "$0")/.."
+
+echo "==> Starting the app..."
+script/ascii2.sh
+java -jar target/booklets-1.0.war

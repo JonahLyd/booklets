@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" th:href="../css/index.css">
+<div class="blocked">
+    <div class="imgcontainer">
+      <img src="../images/logo.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <form id="loginForm" name="loginForm" method="get">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="johnsmith@example.com" id="unm" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="pwd" required>
+
+        <button onclick="check()">Sign In</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <span class="psw"><a href="#">Forgot Password?</a></span>
+      </form>
+      <script>
+        function check() {
+          console.log("outer");
+          var form = document.getElementById("loginForm");
+          if (form.elements[0] == "name@place.com" && form.elements[0] == "pwd") {
+            console.log("inner");
+            window.location.pathname = "Booklet.html";
+          }
+        }
+      </script>
+    </div>
+</div>
+<div class="container-bottom" style="background-color:#f1f1f1">
+  <footer class="foot">All Rights Reserved 2024</footer>
+</div>
+</html>

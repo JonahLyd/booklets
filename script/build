@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+[ -z "${DEBUG}" ] || set -x
+
+cd "$(dirname "$0")/.."
+
+echo "==> Building the app.."
+script/ascii1.sh
+mvn clean package
