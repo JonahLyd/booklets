@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" th:href="../css/index.css">
-<div class="blocked">
-    <div class="imgcontainer">
-      <img src="../images/logo.jpg" alt="Avatar" class="avatar">
-    </div>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Booklets</title>
+  <script type="text/javascript">
+    document.getElementById("avatar").onclick = function () {
+        location.href = "User.html";
+    };
+    document.getElementById("logo").onclick = function () {
+        location.href = "Login.html";
+    };
+  </script>
+  <link rel="stylesheet" type="text/css" media="all" href="../static/assets/css/index.css" th:href="@{/assets/css/index.css}"/>
+</head>
 
-    <div class="container">
-      <form id="loginForm" name="loginForm" method="get">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="johnsmith@example.com" id="unm" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" id="pwd" required>
-
-        <button onclick="check()">Sign In</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-        <span class="psw"><a href="#">Forgot Password?</a></span>
-      </form>
-      <script>
-        function check() {
-          console.log("outer");
-          var form = document.getElementById("loginForm");
-          if (form.elements[0] == "name@place.com" && form.elements[0] == "pwd") {
-            console.log("inner");
-            window.location.pathname = "Booklet.html";
-          }
-        }
-      </script>
-    </div>
+<body>
+<div>
+  <h1><img id="logo" src="../static/assets/images/tiny.jpg" alt="Logo">Booklets</h1>
+  <img id="avatar" src="../static/assets/images/pfp.jpg" alt="Logo">
 </div>
-<div class="container-bottom" style="background-color:#f1f1f1">
-  <footer class="foot">All Rights Reserved 2024</footer>
+<div class="searchBar">
+  <input type="text" id="searchBar" name="searchbar" placeholder="Find a booklet by its name..." onkeyup="searchBooklet()">
+  <button onclick="">Search</button>
+</div>
+
+<div id="bookletDisplay" th:unless="${#lists.isEmpty(recentlyViewedBooklets)}">
+  <h3>Recently Viewed:</h3>
+
+    <li><a href="../../../../files/level1/silverSA_TDSDec2016.pdf">silverSA_TDSDec2016</a></li>
+    <br><br><br>
+
+    <li><a href="../../../../files/level2/brAlloy25C17200StripDataSheet.pdf">brAlloy25C17200StripDataSheet</a></li>
+    <br><br><br>
+
+    <li><a href="../../../../files/level2/jotunSurface37f.pdf">jotunSurface37f</a></li>
+    <br><br><br>
+
+    <li><a href="../../../../files/level1/TDS_vinyl_coat.pdf">TDS_vinyl_coat</a></li>
+</div>
+</body>
+
+<div class="wrapper">
+  <footer>
+    All material on this Website is owned by Fairfield University. <br>
+    Any reproduction or use of its content is prohibited without permission of its owner. <br>
+    Fairfield University © 2024
+  </footer>
 </div>
 </html>

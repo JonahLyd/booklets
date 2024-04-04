@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" th:href="../css/user.css">
-<!-- For special cs styling only for this page--> 
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- For special cs styling only for this page-->
 <style>
 </style>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Colonial Coatings</title> <!-- Tab name-->
-    <div class="head-align">  
-        <img src="../images/logo.jpg" height="70px" width="300px" alt="Logo" >
-    </div>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/assets/css/user.css" th:href="@{/assets/css/user.css}"/>
 </head>
 
+<div class="head-align">
+    <img src="../static/assets/images/logo.jpg" height="70px" width="300px" alt="Logo" >
+</div>
 <!-- Nav Bar -->
 <div>
     <nav>
         <ul>
-            <li><a href="user.html">Home</a></li>
-            <li><a href="homepage.html">Booklets</a></li>
-            <li><a href="https://colonialcoatings.com/certifications/">Server</a></li>
-            <li><a href="UserProfile.html">User Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booklet.html">Booklet Viewer</a></li>
+            <li><a href="login.html">Log Out</a></li>
         </ul>
     </nav>
 </div>

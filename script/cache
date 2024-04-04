@@ -5,6 +5,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-script/build
-
-script/server
+mvn dependency:purge-local-repository

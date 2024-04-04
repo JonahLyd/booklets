@@ -1,4 +1,4 @@
-package org.fairfield.booklets;
+package org.fairfield.booklets.Base;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
