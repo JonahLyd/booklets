@@ -1,4 +1,4 @@
-package org.fairfield.booklets.Entity;
+package org.fairfield.booklets.entity;
 
 public class EntityLevel {
   private Long id;

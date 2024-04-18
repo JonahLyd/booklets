@@ -1,4 +1,4 @@
-package org.fairfield.booklets.Controller;
+package org.fairfield.booklets.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;

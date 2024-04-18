@@ -1,4 +1,4 @@
-package org.fairfield.booklets.Entity;
+package org.fairfield.booklets.entity;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ public class Booklet {
   private Long userIdCreated;
   private Long userIdLastModified;
   private String name;
-  private String filePath;
+  private String fileName;
   private Date dateCreated;
   private Date dateLastUpdated;
 
@@ -22,7 +22,7 @@ public class Booklet {
     setUserIdCreated(builder.userIdCreated);
     setUserIdLastModified(builder.userIdLastModified);
     setName(builder.name);
-    setFilePath(builder.filePath);
+    setFileName(builder.fileName);
     setDateCreated(builder.dateCreated);
     setDateLastUpdated(builder.dateLastUpdated);
   }
@@ -71,12 +71,12 @@ public class Booklet {
     this.name = name;
   }
 
-  public String getFilePath() {
-    return filePath;
+  public String getFileName() {
+    return fileName;
   }
 
-  public void setFilePath(String filePath) {
-    this.filePath = filePath;
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
   }
 
   public Date getDateCreated() {
@@ -102,7 +102,7 @@ public class Booklet {
     private Long userIdCreated;
     private Long userIdLastModified;
     private String name;
-    private String filePath;
+    private String fileName;
     private Date dateCreated;
     private Date dateLastUpdated;
 
@@ -134,8 +134,8 @@ public class Booklet {
       return this;
     }
 
-    public Builder withFilePath(String filePath) {
-      this.filePath = filePath;
+    public Builder withFileName(String fileName) {
+      this.fileName = fileName;
       return this;
     }
 

@@ -1,4 +1,4 @@
-package org.fairfield.booklets.Entity;
+package org.fairfield.booklets.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -11,6 +11,7 @@ public class UserDetails extends User {
   private String firstName;
   private String lastName;
   private String phoneNumber;
+  private String email;
   private List<Booklet> recentlyViewedBooklets;
 
   private UserDetails(Builder builder) {
@@ -20,6 +21,7 @@ public class UserDetails extends User {
     setFirstName(builder.firstName);
     setLastName(builder.lastName);
     setPhoneNumber(builder.phoneNumber);
+    setEmail(builder.email);
     setRecentlyViewedBooklets(builder.recentlyViewedBooklets);
   }
 
@@ -73,6 +75,23 @@ public class UserDetails extends User {
 
   public void setRecentlyViewedBooklets(List<Booklet> recentlyViewedBooklets) {
     this.recentlyViewedBooklets = recentlyViewedBooklets;
+  }
+
+  @Override
+  public String getUsername() {
+    return email;
+  }
+
+  public void setUsername(String username) {
+    this.email = username;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public static final class Builder {
